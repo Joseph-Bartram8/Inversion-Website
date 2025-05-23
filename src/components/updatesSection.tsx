@@ -1,4 +1,4 @@
-import { Box, Heading, Text, SimpleGrid, Image, VStack, Container, Spacer } from '@chakra-ui/react'
+import { Box, Heading, Text, SimpleGrid, Image, VStack, Container } from '@chakra-ui/react'
 import reactLogo from '../assets/hero.png'
 
 
