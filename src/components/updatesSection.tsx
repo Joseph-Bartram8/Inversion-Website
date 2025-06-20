@@ -1,6 +1,13 @@
 import { Box, Heading, Text, SimpleGrid, Image, VStack, Container } from '@chakra-ui/react'
 import reactLogo from '../assets/hero.png'
 
+const updates = [
+  "Game started development",
+  "MVP in development",
+  "Alpha version will be available in December 2025",
+  "Added Bla Bla Bla Bla Bla",
+  "Added Bla Bla Bla Bla Bla",
+];
 
 export default function UpdatesSection(){
   return (
@@ -9,25 +16,38 @@ export default function UpdatesSection(){
         <Container maxW="container.lg">
 
           <VStack gap={6} h = "100%" justify="center" align="center" color="white" textAlign="center">
-                <Heading fontSize={{base:`3xl`, md:`5xl`}} letterSpacing="widest">
-                  Latest Developer Update  
-                </Heading> 
+            <Heading
+              fontSize={{ base: "3xl", md: "5xl" }}
+              letterSpacing="widest"
+              textAlign="left"
+              w="full"
+              pb={2}
+            >
+              Latest Developer Update
+            </Heading>
               
               <SimpleGrid columns={{ base: 1, md: 2 }} w="100%" gap={{ base: 8, md: 12 }}>
-                <VStack  >
-                  <Text>-Game Started Development</Text>
-                  <Text>-MVP in development</Text>
-                  <Text>-Alpha version will be availiable in december 2025</Text>
-                  <Text>-Added Bla Bla Bla Bla Bla</Text>
-                  <Text>-Added Bla Bla Bla Bla Bla</Text>
-                </VStack>
+                <Box bg="gray.800" p={6} rounded="md" boxShadow="md" w="100%">
+                  <VStack gap={4} align="start">
+                    <Text fontSize="md" color="gray.400" fontWeight="semibold">
+                      v0.1.0 - June 2025 - The Hack
+                    </Text>
+                    {updates.map((update, index) => (
+                      <Text key={index} fontSize="lg" fontWeight="medium">
+                        • {update}
+                      </Text>
+                    ))}
+                  </VStack>
+                </Box>
+
                 <Box flex="1" textAlign="center">
                   <Image
                     src={reactLogo}
                     alt="What we're working on"
                     objectFit="cover"
-                    borderRadius="md"
-                    maxW={{ base: '100%', md: '400px' }}
+                    borderRadius="2xl"
+                    boxShadow="lg"
+                    maxW={{ base: '100%', md: '450px' }}
                     mx="auto"
                   />
                 </Box>
