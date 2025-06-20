@@ -1,5 +1,4 @@
 import { Box, Heading, Image, VStack, SimpleGrid, Text, Container } from "@chakra-ui/react";
-import reactLogo from "../assets/hero.png";
 
 export default function GameOfTheYearSection() {
   return (
