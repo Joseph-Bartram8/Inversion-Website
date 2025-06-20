@@ -38,7 +38,7 @@ export default function SignUpForm() {
   };
 
   return (
-    <Box as="section" bg="black" overflow="hidden" color="white" w="100%" py={{ base: 12, md: 16 }} px={{ base: 4, md: 16 }}>
+    <Box as="section" bg="gray.900" overflow="hidden" color="white" w="100%" py={{ base: 12, md: 16 }} px={{ base: 4, md: 16 }}>
       <Container maxW="container.xl">
         <VStack gap={6} as="form" maxW="600px" mx="auto" onSubmit={handleSubmit}>
           <Heading fontSize={{ base: "3xl", md: "5xl" }} mb={{ base: 4, md: 6 }}>

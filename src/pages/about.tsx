@@ -9,8 +9,8 @@ export default function AboutPage() {
   return (
     <>
       <Box pt="96px">
-        <AboutSection />
         <UpdatesSection />
+        <AboutSection />
         <CallToActionSection />
       </Box>
     </>
