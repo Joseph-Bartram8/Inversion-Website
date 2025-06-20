@@ -1,39 +1,42 @@
 import { Box, Heading, Text, SimpleGrid, Image, VStack, Container } from '@chakra-ui/react'
 import reactLogo from '../assets/hero.png'
 
-
-export default function TeamIntroSection(){
+export default function TeamIntroSection() {
   return (
-    <>      
-      <Box w="full" bg="gray.900" py={{ base: 8, md: 12 }}>
-        <Container maxW="container.lg">
+    <Box w="full" bg="gray.900" pt={{ base: 6, md: 8 }} pb={{ base: 16, md: 20 }}>
+      <Container maxW="container.lg">
+        <VStack gap={10} h="100%" justify="center" align="center" color="white" textAlign={{ base: "center", md: "left" }}>
+          <Heading fontSize={{ base: '3xl', md: '5xl' }} letterSpacing="widest" textAlign={{ base: 'center', md: 'left' }}>
+            The Team
+          </Heading>
 
-          <VStack gap={6} h = "100%" justify="center" align="center" color="white" textAlign="center">
-                <Heading fontSize={{base:`3xl`, md:`5xl`}} letterSpacing="widest">
-                  The Inversion Project
-                </Heading> 
-              
-              <SimpleGrid columns={{ base: 1, md: 2 }} w="100%" gap={{ base: 8, md: 12 }}>
-                <VStack  >
-                  <Text>Inversion is a game currently under development as a university project. The team consists of 5 students with varying levels of development experience. We are commited to delivering the highest possible quality that we can, providing the best gaming experience we can to all of our user.</Text>
+          <SimpleGrid columns={{ base: 1, md: 2 }} w="100%" gap={{ base: 10, md: 16 }}>
+            <VStack align="start" gap={4}>
+              <Text fontSize={{ base: "md", md: "lg" }}>
+                <strong>Inversion</strong> is a game currently under development as a university project.
+              </Text>
+              <Text fontSize={{ base: "md", md: "lg" }}>
+                The team consists of five students with varying levels of development experience. We are committed to delivering the highest possible quality, providing the best gaming experience we can to all of our users.
+              </Text>
+              <Text fontSize={{ base: "md", md: "lg" }}>
+                Throught the development of the game, we aim to keep you updated with the latest updates regarding development. We will do this via social media posts, and an email newsletter.
+              </Text>
+            </VStack>
 
-                </VStack>
-                <Box flex="1" textAlign="center">
-                  <Image
-                    src={reactLogo}
-                    alt="What we're working on"
-                    objectFit="cover"
-                    borderRadius="md"
-                    maxW={{ base: '100%', md: '400px' }}
-                    mx="auto"
-                  />
-                </Box>
-              </SimpleGrid>
-
-          </VStack>
-        </Container>
-      </Box>
-
-    </>
+            <Box flex="1" textAlign="center" px={{ base: 0, md: 4 }}>
+              <Image
+                src={reactLogo}
+                alt="What we're working on"
+                objectFit="cover"
+                borderRadius="md"
+                maxW="100%"
+                maxH="300px"
+                mx="auto"
+              />
+            </Box>
+          </SimpleGrid>
+        </VStack>
+      </Container>
+    </Box>
   )
 }

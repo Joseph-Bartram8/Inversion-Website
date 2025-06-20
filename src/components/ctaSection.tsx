@@ -12,16 +12,20 @@ export default function CallToActionSection() {
           >
             Sign Up To Newsletter
           </Heading>
-  
+
           <Button
             as="a"
-            px={6}
-            size="sm"
+            size="lg"
+            px={8}
             bg="white"
             color="gray.800"
             borderRadius="md"
             boxShadow="md"
-            _hover={{ bg: 'gray.100' }}
+            transition="transform 0.2s ease, background-color 0.2s ease"
+            _hover={{
+              bg: 'gray.100',
+              transform: 'scale(1.02)'
+            }}
             {...{ href: "/signup" }}
           >
             Sign Up
