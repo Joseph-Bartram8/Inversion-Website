@@ -1,5 +1,4 @@
 import { Box, Heading, Text, SimpleGrid, Image, VStack, Container } from '@chakra-ui/react'
-import reactLogo from '../assets/hero.png'
 
 export default function AboutSection() {
   return (
@@ -13,10 +12,10 @@ export default function AboutSection() {
           <SimpleGrid columns={{ base: 1, md: 2 }} w="100%" gap={{ base: 10, md: 16 }}>
             <VStack align="start" gap={4}>
               <Text fontSize={{ base: 'md', md: 'lg' }}>
-                <strong>Inversion</strong> is a strategic turn-based game set in a distorted sci-fi world. The gameplay blends tactical combat, decision-making, and resource management, offering players deep, replayable experiences.
+                <strong>Inversion</strong> is a strategic puzzle game set in a distorted sci-fi world. The gameplay blends thouht provoking puzzles abnd difficult choices, offering players deep, replayable experiences.
               </Text>
               <Text fontSize={{ base: 'md', md: 'lg' }}>
-                Built in Unity, the game is currently in its MVP development phase, with an alpha release targeted for December 2025. Our goal is to deliver polished mechanics and a compelling atmosphere.
+                Built in Unity, the game is currently in its pre alpha development phase, with an alpha release targeted for December 2025. Our goal is to deliver polished mechanics and a compelling atmosphere.
               </Text>
               <Text fontSize={{ base: 'md', md: 'lg' }}>
                 Stay tuned for regular updates as we build out the universe, refine core systems, and begin community testing.
@@ -25,7 +24,7 @@ export default function AboutSection() {
 
             <Box flex="1" textAlign="center">
               <Image
-                src={reactLogo}
+                src="InversionTitle.png"
                 alt="In-game concept"
                 objectFit="cover"
                 borderRadius="md"

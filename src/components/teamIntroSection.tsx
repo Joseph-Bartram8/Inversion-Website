@@ -1,5 +1,4 @@
 import { Box, Heading, Text, SimpleGrid, Image, VStack, Container } from '@chakra-ui/react'
-import reactLogo from '../assets/hero.png'
 
 export default function TeamIntroSection() {
   return (
@@ -25,7 +24,7 @@ export default function TeamIntroSection() {
 
             <Box flex="1" textAlign="center" px={{ base: 0, md: 4 }}>
               <Image
-                src={reactLogo}
+                src="TheTeam.png"
                 alt="What we're working on"
                 objectFit="cover"
                 borderRadius="md"
