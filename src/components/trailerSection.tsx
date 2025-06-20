@@ -17,7 +17,7 @@ export default function VideoTrailerSection(){
             <AspectRatio ratio={16 / 9} w="full" maxW="800px" mx="auto">
                       <iframe
                         title="Gameplay Trailer"
-                        src="https://www.youtube.com/embed/H7Uyfqi_TE8?rel=0&autoplay=0"
+                        src="https://www.youtube.com/embed/cAcsMtjKRYk?rel=0&autoplay=0"
                         allowFullScreen
                       />
             </AspectRatio>
