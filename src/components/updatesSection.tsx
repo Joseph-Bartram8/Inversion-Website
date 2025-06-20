@@ -2,10 +2,10 @@ import { Box, Heading, Text, SimpleGrid, Image, VStack, Container } from '@chakr
 const updates = [
   "Game started development",
   "MVP in development",
-  "Alpha will be available in December 2025",
+  "Alpha scheduled for December 2025",
   "Tutorial level available",
-  "Inversion system Implimented",
-  "Visuals of swtiching bvetween worlds added",
+  "Inversion system implomented",
+  "Switching between worlds added",
 ];
 
 export default function UpdatesSection(){
