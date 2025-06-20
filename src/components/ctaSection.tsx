@@ -22,6 +22,7 @@ export default function CallToActionSection() {
             borderRadius="md"
             boxShadow="md"
             _hover={{ bg: 'gray.100' }}
+            {...{ href: "/signup" }}
           >
             Sign Up
           </Button>

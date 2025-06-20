@@ -10,25 +10,25 @@ import {
 import React, { useState } from "react";
 
 export default function SignUpForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [subject, setsubject] = useState("");
+  const [HTML, setHTML] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
-      const res = await fetch("https://3f8d0c0a-2a2d-428a-b50c-d6932dda980f-00-2udofnjquu6pg.picard.replit.dev/subscribe", {
+      const res = await fetch("https://3f8d0c0a-2a2d-428a-b50c-d6932dda980f-00-2udofnjquu6pg.picard.replit.dev/send-test", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ name, email })
+        body: JSON.stringify({ subject, HTML })
       });
 
       if (!res.ok) {
-        console.error("Failed to subscribe");
+        console.error("Failed to send test newsletter");
       } else {
-        console.log("Subscribed successfully");
+        console.log("Sent successfully");
       }
     } catch (err) {
       console.error("Error:", err);
@@ -43,13 +43,13 @@ export default function SignUpForm() {
             Sign Up For Newsletter
           </Heading>
 
-          <Box id="name" w="100%">
-            <Text textAlign="left">Enter Name</Text>
+          <Box id="subject" w="100%">
+            <Text textAlign="left">Enter subject</Text>
             <Input
               type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Your Name"
+              value={subject}
+              onChange={(e) => setsubject(e.target.value)}
+              placeholder="Your subject"
               bg="gray.700"
               color="white"
               _placeholder={{ color: "gray.400", fontWeight: "light" }}
@@ -60,13 +60,13 @@ export default function SignUpForm() {
             />
           </Box>
 
-          <Box id="email" w="100%">
-            <Text textAlign="left">Enter Email</Text>
+          <Box id="HTML" w="100%">
+            <Text textAlign="left">Enter HTML</Text>
             <Input
               type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Your Email"
+              value={HTML}
+              onChange={(e) => setHTML(e.target.value)}
+              placeholder="Your HTML"
               bg="gray.700"
               color="white"
               _placeholder={{ color: "gray.400", fontWeight: "light" }}
@@ -87,11 +87,11 @@ export default function SignUpForm() {
             fontWeight="semibold"
             px={10}
           >
-            Sign Up
+            Send Test Newsletter
           </Button>
         </VStack>
       </Container>
     </Box>
   );
 }
-// This component is a sign-up form for a newsletter, allowing users to enter their name and email.
+// This component is a sign-up form for a newsletter, allowing users to enter their subject and HTML.

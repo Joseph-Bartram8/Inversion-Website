@@ -1,5 +1,11 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+  "version": 2,
+  "builds": [
+    { "src": "api/*.go", "use": "@vercel/go" }
+  ],
+  "routes": [
+    { "src": "/api/subscribe", "dest": "api/subscribe.go" },
+
+    { "src": "/(.*)",       "dest": "/" }
   ]
 }
