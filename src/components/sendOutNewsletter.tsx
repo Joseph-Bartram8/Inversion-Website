@@ -9,29 +9,31 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 
-export default function SignUpForm() {
-  const [subject, setsubject] = useState("");
-  const [HTML, setHTML] = useState("");
+export default function BroadcastForm() {
+  const [subject, setSubject] = useState("");
+  const [html, setHtml] = useState("");
+  const [status, setStatus] = useState<"success" | "error" | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setStatus(null);
 
     try {
-      const res = await fetch("https://3f8d0c0a-2a2d-428a-b50c-d6932dda980f-00-2udofnjquu6pg.picard.replit.dev/send-test", {
+      const res = await fetch("https://3f8d0c0a-2a2d-428a-b50c-d6932dda980f-00-2udofnjquu6pg.picard.replit.dev/broadcast", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ subject, HTML })
+        body: JSON.stringify({ subject, html })
       });
 
-      if (!res.ok) {
-        console.error("Failed to send test newsletter");
+      if (res.ok) {
+        setStatus("success");
       } else {
-        console.log("Sent successfully");
+        setStatus("error");
       }
     } catch (err) {
-      console.error("Error:", err);
+      setStatus("error");
     }
   };
 
@@ -40,15 +42,15 @@ export default function SignUpForm() {
       <Container maxW="container.xl">
         <VStack gap={6} as="form" maxW="600px" mx="auto" onSubmit={handleSubmit}>
           <Heading fontSize={{ base: "3xl", md: "5xl" }} mb={{ base: 4, md: 6 }}>
-            Sign Up For Newsletter
+            Broadcast Newsletter
           </Heading>
 
-          <Box id="subject" w="100%">
-            <Text textAlign="left">Enter subject</Text>
+          <Box w="100%">
+            <Text textAlign="left">Enter Subject</Text>
             <Input
               type="text"
               value={subject}
-              onChange={(e) => setsubject(e.target.value)}
+              onChange={(e) => setSubject(e.target.value)}
               placeholder="Your subject"
               bg="gray.700"
               color="white"
@@ -60,13 +62,13 @@ export default function SignUpForm() {
             />
           </Box>
 
-          <Box id="HTML" w="100%">
+          <Box w="100%">
             <Text textAlign="left">Enter HTML</Text>
             <Input
               type="text"
-              value={HTML}
-              onChange={(e) => setHTML(e.target.value)}
-              placeholder="Your HTML"
+              value={html}
+              onChange={(e) => setHtml(e.target.value)}
+              placeholder="Your HTML content"
               bg="gray.700"
               color="white"
               _placeholder={{ color: "gray.400", fontWeight: "light" }}
@@ -87,11 +89,17 @@ export default function SignUpForm() {
             fontWeight="semibold"
             px={10}
           >
-            Send Test Newsletter
+            Send Broadcast
           </Button>
+
+          {status === "success" && (
+            <Text color="green.400">Broadcast sent successfully</Text>
+          )}
+          {status === "error" && (
+            <Text color="red.400">Failed to send broadcast</Text>
+          )}
         </VStack>
       </Container>
     </Box>
   );
 }
-// This component is a sign-up form for a newsletter, allowing users to enter their subject and HTML.

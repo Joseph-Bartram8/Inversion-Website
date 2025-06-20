@@ -12,9 +12,11 @@ import React, { useState } from "react";
 export default function SignUpForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"success" | "error" | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setStatus(null);
 
     try {
       const res = await fetch("https://3f8d0c0a-2a2d-428a-b50c-d6932dda980f-00-2udofnjquu6pg.picard.replit.dev/subscribe", {
@@ -25,13 +27,13 @@ export default function SignUpForm() {
         body: JSON.stringify({ name, email })
       });
 
-      if (!res.ok) {
-        console.error("Failed to subscribe");
+      if (res.ok) {
+        setStatus("success");
       } else {
-        console.log("Subscribed successfully");
+        setStatus("error");
       }
     } catch (err) {
-      console.error("Error:", err);
+      setStatus("error");
     }
   };
 
@@ -43,7 +45,7 @@ export default function SignUpForm() {
             Sign Up For Newsletter
           </Heading>
 
-          <Box id="name" w="100%">
+          <Box w="100%">
             <Text textAlign="left">Enter Name</Text>
             <Input
               type="text"
@@ -60,7 +62,7 @@ export default function SignUpForm() {
             />
           </Box>
 
-          <Box id="email" w="100%">
+          <Box w="100%">
             <Text textAlign="left">Enter Email</Text>
             <Input
               type="text"
@@ -89,9 +91,15 @@ export default function SignUpForm() {
           >
             Sign Up
           </Button>
+
+          {status === "success" && (
+            <Text color="green.400">Subscribed successfully</Text>
+          )}
+          {status === "error" && (
+            <Text color="red.400">Failed to subscribe</Text>
+          )}
         </VStack>
       </Container>
     </Box>
   );
 }
-// This component is a sign-up form for a newsletter, allowing users to enter their name and email.

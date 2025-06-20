@@ -23,8 +23,14 @@ export default function MinimumRequirementsSection() {
             w="full"
             boxShadow="md"
             textAlign="left"
+            transition="transform 0.3s ease, box-shadow 0.3s ease"
+            willChange="transform"
+            _hover={{
+              transform: "scale(1.01)",
+              boxShadow: "lg"
+            }}
           >
-            <SimpleGrid columns={2} spaceY={4}>
+            <SimpleGrid columns={2} gapY={4}>
               <Text fontWeight="bold">OS</Text>
               <Text>Windows 10</Text>
 
