@@ -1,12 +1,11 @@
 import { Box, Heading, Text, SimpleGrid, Image, VStack, Container } from '@chakra-ui/react'
-import reactLogo from '../assets/hero.png'
-
 const updates = [
   "Game started development",
   "MVP in development",
   "Alpha version will be available in December 2025",
-  "Added Bla Bla Bla Bla Bla",
-  "Added Bla Bla Bla Bla Bla",
+  "Tutorial level available",
+  "Inversion system Implimented",
+  "Visuals of swtiching bvetween worlds added",
 ];
 
 export default function UpdatesSection(){
@@ -42,7 +41,7 @@ export default function UpdatesSection(){
 
                 <Box flex="1" textAlign="center">
                   <Image
-                    src={reactLogo}
+                    src="GameUpdates.png"
                     alt="What we're working on"
                     objectFit="cover"
                     borderRadius="2xl"
