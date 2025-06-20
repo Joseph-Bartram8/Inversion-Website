@@ -3,7 +3,7 @@ import reactLogo from '../assets/hero.png'
 
 export default function AboutSection() {
   return (
-    <Box w="full" bg="gray.900" py={{ base: 12, md: 20 }}>
+    <Box w="full" bg="black" py={{ base: 12, md: 20 }}>
       <Container maxW="container.lg">
         <VStack gap={10} h="100%" justify="center" align="center" color="white" textAlign={{ base: 'center', md: 'left' }}>
           <Heading fontSize={{ base: '3xl', md: '5xl' }} letterSpacing="wider" textAlign="center">
