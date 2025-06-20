@@ -12,7 +12,7 @@ export default function AboutSection() {
           <SimpleGrid columns={{ base: 1, md: 2 }} w="100%" gap={{ base: 10, md: 16 }}>
             <VStack align="start" gap={4}>
               <Text fontSize={{ base: 'md', md: 'lg' }}>
-                <strong>Inversion</strong> is a strategic puzzle game set in a distorted sci-fi world. The gameplay blends thouht provoking puzzles abnd difficult choices, offering players deep, replayable experiences.
+                <strong>Inversion</strong> is a strategic puzzle game set in a distorted sci-fi world. The gameplay blends thought provoking puzzles and difficult choices, offering players deep, replayable experiences.
               </Text>
               <Text fontSize={{ base: 'md', md: 'lg' }}>
                 Built in Unity, the game is currently in its pre alpha development phase, with an alpha release targeted for December 2025. Our goal is to deliver polished mechanics and a compelling atmosphere.
