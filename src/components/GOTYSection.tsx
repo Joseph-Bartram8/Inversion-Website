@@ -25,7 +25,7 @@ export default function GameOfTheYearSection() {
               }}
             >
               <Image
-                src={reactLogo}
+                src="/GameImage1.png"
                 alt="Immersive Gameplay"
                 width="100%"
                 aspectRatio={16 / 9}
@@ -55,7 +55,7 @@ export default function GameOfTheYearSection() {
               }}
             >
               <Image
-                src={reactLogo}
+                src="/TitleScreen.png"
                 alt="Cinematic Visuals"
                 width="100%"
                 aspectRatio={16 / 9}
@@ -85,7 +85,7 @@ export default function GameOfTheYearSection() {
               }}
             >
               <Image
-                src={reactLogo}
+                src="/GameImage2.png"
                 alt="Evolving Narrative"
                 width="100%"
                 aspectRatio={16 / 9}
