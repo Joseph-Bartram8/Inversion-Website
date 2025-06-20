@@ -2,15 +2,7 @@
   "version": 2,
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "builds": [
-    {
-      "src": "api/*.go",
-      "use": "@vercel/go"
-    }
-  ],
-  "routes": [
-    { "src": "/api/subscribe", "dest": "api/subscribe.go" },
-    { "src": "/api/(.*)", "dest": "api/$1.go" },
-    { "src": "/(.*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
